@@ -1,0 +1,47 @@
+# ============================================================
+# Japonca Karakter Sesi - Python bağımlılıkları
+# Python 3.10 önerilir (Style-Bert-VITS2 ile uyumlu).
+#
+# PyTorch'u BURADAN kurma. Önce CUDA'ya uygun sürümü
+# resmi komutla kur (README'ye bak), sonra bu dosyayı kur:
+#   pip install -r requirements.txt
+# ============================================================
+
+# --- Japonca dil ön-yüzü ---
+# DİKKAT: pyopenjtalk-plus, SBV2'nin istediği pyopenjtalk-dict'in yerine
+# kullanılır. pyopenjtalk-dict'in prebuilt wheel'i numpy 2.x ile ABI uyumsuz;
+# pyopenjtalk-plus numpy 2.2.6 ile çalışıyor ve aynı 'pyopenjtalk' API'sini sağlar.
+# SBV2 kurarken pyopenjtalk-dict gelirse: kaldır, pyopenjtalk klasörünü sil,
+# pyopenjtalk-plus'ı --no-cache-dir ile yeniden kur.
+pyopenjtalk-plus        # Open JTalk wrapper: G2P + aksan + full-context
+sudachipy               # Japonca tokenizer (normalizasyon)
+sudachidict-core        # Sudachi sözlüğü (çekirdek varyant)
+
+# --- TTS motoru (inference; eğitim için repo ayrıca klonlanır) ---
+style-bert-vits2        # SBV2 inference kütüphanesi
+# NOT: setuptools<81 gerekli (pyopenjtalk pkg_resources kullanıyor).
+
+# --- Veri indirme / işleme ---
+gdown                   # Google Drive'dan JVS indirme
+soundfile               # WAV okuma/yazma
+librosa                 # resample / analiz
+numpy
+pandas                  # manifest (CSV) yönetimi
+tqdm                    # ilerleme çubukları
+pyyaml                  # config dosyaları
+
+# --- Kalite kontrol (QC) ---
+faster-whisper          # üretilen sesin transkripsiyonu (QC)
+
+# --- Konfigürasyon ---
+python-dotenv           # .env okuma
+fastapi                 # canlı sohbet sunucusu (scripts/serve_chat.py)
+uvicorn[standard]
+httpx                   # Ollama istemcisi (src/japonca_tts/chat.py)
+pykakasi                # Japonca -> romaji (okunuş satırı)
+setuptools<81           # pyopenjtalk pkg_resources'a ihtiyaç duyuyor (numpy/setuptools uyumu)
+
+# NOT:
+# - Style-Bert-VITS2 üçüncü parti repodan klonlanır (third_party/),
+#   kendi requirements'ı ile ayrı kurulur. Bu dosya bizim pipeline içindir.
+# - ffmpeg pip paketi değildir; sistem kurulumu gerekir (README'ye bak).

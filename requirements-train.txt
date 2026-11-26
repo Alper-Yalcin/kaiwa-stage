@@ -1,0 +1,41 @@
+# Style-Bert-VITS2 EĞİTİM bağımlılıkları (kırpılmış) — .venv-train için.
+# torch/torchaudio ayrıca cu121 index'inden kurulur (README/komut).
+#
+# Repo requirements.txt'ten ÇIKARILANLAR ve nedenleri:
+#   faster-whisper==0.10.1, stable_ts, punctuators
+#     -> sadece transcribe/slice (ASR) için; bizde transkript hazır (esd.list).
+#        Ayrıca eski faster-whisper, derlenemeyen eski 'av' (PyAV) çekiyordu.
+# DİKKAT: pyannote.audio ÇIKARILMADI — style_gen.py onu kullanıyor. Ancak
+#   sürüm KRİTİK: pyannote.audio 4.x torch>=2.8 + numpy>=2 zorluyor (SBV2 torch<2.4
+#   ve pyopenjtalk-dict numpy<2 ile çakışır). Bu yüzden 3.1.1'e SABİTLENDİ.
+#   onnx, onnxconverter-common, onnxruntime*, onnxsim-prebuilt
+#     -> sadece ONNX export için; eğitim/preprocess'te gerekmez.
+#
+# preprocess_all (resample/text/bert/style) + train_ms_jp_extra için gerekenler:
+
+numpy<2
+setuptools<81        # pyopenjtalk pkg_resources kullanıyor
+soxr                 # transformers 4.5x audio_utils gerektiriyor
+accelerate
+cmudict
+cn2an
+g2p_en
+GPUtil
+gradio>=4.32        # preprocess_all.py 'gradio_tabs.train' import ediyor
+jieba
+librosa==0.9.2
+loguru
+nltk<=3.8.1
+num2words
+onnxruntime          # style_bert_vits2/utils/__init__.py hard-import ediyor (ONNX kullanmasak da)
+protobuf==4.25
+psutil
+pyannote.audio==3.1.1  # style_gen.py için (sürüm pini şart, yukarıdaki nota bak)
+pyloudnorm           # --normalize için
+pyopenjtalk-dict
+pypinyin
+pyworld-prebuilt
+tensorboard          # eğitim logları
+transformers==4.44.2 # SBV2 dönemi sürüm: 5.x DebertaV2'yi import edemiyor;
+                     # 4.49+ ise torch<2.6'da torch.load (.bin) yüklemeyi reddediyor (SBV2 torch<2.4)
+umap-learn           # style_gen

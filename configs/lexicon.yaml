@@ -1,0 +1,147 @@
+# Özel okunuş sözlüğü (text_frontend.normalize).
+#   anahtar : metinde geçen yazım (Latin ise büyük/küçük harf duyarsız, kelime sınırlı)
+#   değer   : Japonca okunuş (katakana / kanji)
+# Uzun anahtarlar önce uygulanır. "_" ile başlayan anahtarlar yok sayılır.
+# pyopenjtalk bilinmeyen Latin kelimeleri HARF HARF heceler (iPhone -> アイピーエイチ...),
+# bu yüzden sık geçen marka/teknoloji/İngilizce sözcükler buraya eklenir.
+
+# --- Marka / ürün ---
+iPhone: アイフォン
+iPad: アイパッド
+iOS: アイオーエス
+MacBook: マックブック
+Mac: マック
+Windows: ウィンドウズ
+Android: アンドロイド
+Google: グーグル
+Gmail: ジーメール
+YouTube: ユーチューブ
+Twitter: ツイッター
+Instagram: インスタグラム
+Facebook: フェイスブック
+TikTok: ティックトック
+LINE: ライン
+Netflix: ネットフリックス
+Amazon: アマゾン
+Spotify: スポティファイ
+Zoom: ズーム
+Slack: スラック
+Discord: ディスコード
+PayPay: ペイペイ
+Suica: スイカ
+Nintendo: ニンテンドー
+PlayStation: プレイステーション
+Xbox: エックスボックス
+Pokemon: ポケモン
+Uniqlo: ユニクロ
+Toyota: トヨタ
+Honda: ホンダ
+Sony: ソニー
+Panasonic: パナソニック
+Starbucks: スターバックス
+McDonald's: マクドナルド
+Disney: ディズニー
+Tesla: テスラ
+
+# --- Teknoloji / yaygın İngilizce ---
+TEL: 電話
+FAX: ファックス
+URL: ユーアールエル
+ChatGPT: チャットジーピーティー
+OpenAI: オープンエーアイ
+Wi-Fi: ワイファイ
+WiFi: ワイファイ
+Bluetooth: ブルートゥース
+Email: イーメール
+E-mail: イーメール
+mail: メール
+online: オンライン
+offline: オフライン
+login: ログイン
+logout: ログアウト
+password: パスワード
+update: アップデート
+download: ダウンロード
+upload: アップロード
+install: インストール
+app: アプリ
+apps: アプリ
+smartphone: スマートフォン
+computer: コンピューター
+internet: インターネット
+website: ウェブサイト
+web: ウェブ
+cloud: クラウド
+server: サーバー
+data: データ
+software: ソフトウェア
+hardware: ハードウェア
+game: ゲーム
+video: ビデオ
+music: ミュージック
+news: ニュース
+menu: メニュー
+start: スタート
+stop: ストップ
+open: オープン
+close: クローズ
+new: ニュー
+free: フリー
+premium: プレミアム
+level: レベル
+point: ポイント
+points: ポイント
+coin: コイン
+coins: コイン
+item: アイテム
+items: アイテム
+player: プレイヤー
+players: プレイヤー
+mission: ミッション
+stage: ステージ
+boss: ボス
+battle: バトル
+quest: クエスト
+rank: ランク
+score: スコア
+bonus: ボーナス
+event: イベント
+shop: ショップ
+coffee: コーヒー
+cafe: カフェ
+hotel: ホテル
+taxi: タクシー
+bus: バス
+ticket: チケット
+thank you: サンキュー
+hello: ハロー
+hi: ハイ
+yes: イエス
+no: ノー
+ok: オーケー
+okay: オーケー
+sorry: ソーリー
+please: プリーズ
+happy: ハッピー
+birthday: バースデー
+Christmas: クリスマス
+Halloween: ハロウィン
+
+# --- Kanji okunuş düzeltmeleri (Open JTalk sözlük hataları; ölçüldü 2026-09-17) ---
+# anahtar kanji ise doğrudan metin değişimi yapılır (kelime sınırı yok, uzun önce).
+長押しし: ながおしし
+長押し: ながおし
+叩きま: たたきま
+叩いた: たたいた
+叩いて: たたいて
+叩かれ: たたかれ
+叩き: たたき
+一段落: いちだんらく
+明王: みょうおう
+その他: そのた
+他の: ほかの
+乾ドック: かんドック
+鋼製: こうせい
+既約: きやく
+海の幸: うみのさち
+山の幸: やまのさち

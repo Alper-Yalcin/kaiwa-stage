@@ -1,0 +1,36 @@
+# Proje genelindeki yollar. Tüm script'ler buradan okur.
+# Yollar proje köküne görelidir.
+
+data:
+  raw_jvs: data/raw/jvs            # indirilen + açılan JVS (jvs_ver1/...)
+  interim: data/interim            # resample/trim sonrası ara çıktı
+  processed: data/processed/jvs    # SBV2 formatına dönüştürülmüş dataset
+
+metadata:
+  manifest: metadata/jvs_manifest.csv
+
+models:
+  pretrained: models/pretrained    # JP-Extra base (fine-tune başlangıcı)
+  finetuned: models/finetuned      # bizim checkpoint'lerimiz
+
+outputs:
+  wav: outputs/wav
+  mp3: outputs/mp3
+  logs: outputs/logs
+
+third_party:
+  sbv2_repo: third_party/Style-Bert-VITS2
+
+# Ses ön-işleme parametreleri (Aşama 1)
+audio:
+  target_sample_rate: 44100        # SBV2 JP-Extra çıkış oranı (24k JVS buraya resample edilir)
+  trim_silence: true
+  min_duration_sec: 0.5            # bundan kısa kayıtlar elenir
+  max_duration_sec: 14.0           # bundan uzun kayıtlar elenir/bölünür
+
+# MP3 export (Aşama 5)
+export:
+  format: mp3
+  sample_rate: 44100
+  bitrate: "192k"
+  loudness_normalize: true         # ffmpeg loudnorm

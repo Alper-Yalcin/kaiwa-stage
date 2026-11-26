@@ -1,0 +1,25 @@
+{
+  "_comment": "MVP 4/5 sabit test seti: 20 Japonca cümle. Kısa/uzun, sayı, özel ad, soru, ünlem, katakana, tarih/saat karışık. Her karakter bu seti hatasız üretmeli (CER < 0.15).",
+  "sentences": [
+    {"id": "s01", "tag": "kisa",     "text": "おはようございます。"},
+    {"id": "s02", "tag": "kisa",     "text": "ありがとう、また明日。"},
+    {"id": "s03", "tag": "soru",     "text": "すみません、駅はどこですか。"},
+    {"id": "s04", "tag": "soru",     "text": "この本はいくらですか。"},
+    {"id": "s05", "tag": "sayi",     "text": "今日は二千二十六年九月十六日です。"},
+    {"id": "s06", "tag": "sayi",     "text": "会議は午後三時半から始まります。"},
+    {"id": "s07", "tag": "sayi",     "text": "りんごを五つと、みかんを三つください。"},
+    {"id": "s08", "tag": "ozel_ad",  "text": "東京から京都まで新幹線で二時間ほどかかります。"},
+    {"id": "s09", "tag": "ozel_ad",  "text": "田中さんは大阪の会社で働いています。"},
+    {"id": "s10", "tag": "katakana", "text": "コーヒーとサンドイッチをテイクアウトでお願いします。"},
+    {"id": "s11", "tag": "katakana", "text": "スマートフォンのバッテリーがもうすぐ切れそうです。"},
+    {"id": "s12", "tag": "uzun",     "text": "人工知能の技術は急速に進歩しており、私たちの生活を大きく変えようとしています。"},
+    {"id": "s13", "tag": "uzun",     "text": "週末は天気が良ければ、家族と一緒に公園へ散歩に行くつもりです。"},
+    {"id": "s14", "tag": "uzun",     "text": "この町の図書館は静かで居心地が良く、勉強にとても向いています。"},
+    {"id": "s15", "tag": "unlem",    "text": "すごい、本当に信じられない。"},
+    {"id": "s16", "tag": "unlem",    "text": "危ない、後ろを見て。"},
+    {"id": "s17", "tag": "duygu",    "text": "ごめんなさい、遅れてしまいました。"},
+    {"id": "s18", "tag": "duygu",    "text": "やっと会えたね、ずっと待っていたよ。"},
+    {"id": "s19", "tag": "gunluk",   "text": "冷蔵庫に牛乳がないので、帰りにスーパーで買ってきてください。"},
+    {"id": "s20", "tag": "gunluk",   "text": "電車が遅れているようなので、少し早めに家を出ましょう。"}
+  ]
+}

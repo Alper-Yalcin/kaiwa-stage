@@ -1,0 +1,155 @@
+{
+  "run": "web_v2",
+  "manifest": "outputs\\logs\\web_v2_manifest.csv",
+  "threshold": 0.15,
+  "asr_model": "large-v3",
+  "n": 336,
+  "n_ok": 335,
+  "n_fail": 1,
+  "n_short": 0,
+  "mean_cer": 0.0065,
+  "characters": {
+    "deep_narrator": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0018,
+      "max_cer": 0.0435,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "chill_male": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0054,
+      "max_cer": 0.087,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "energetic_male": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0099,
+      "max_cer": 0.1,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "young_male": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0058,
+      "max_cer": 0.0625,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "calm_female": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0018,
+      "max_cer": 0.0435,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "bright_female": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0065,
+      "max_cer": 0.0625,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "excited_female": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0072,
+      "max_cer": 0.125,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "mysterious_voice": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0018,
+      "max_cer": 0.0435,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "whisper_male": {
+      "n": 24,
+      "n_ok": 23,
+      "n_short": 0,
+      "mean_cer": 0.0132,
+      "max_cer": 0.1667,
+      "concat_cer": null,
+      "failed_ids": [
+        "t06_r"
+      ],
+      "short_ids": []
+    },
+    "playful_falsetto": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.002,
+      "max_cer": 0.0476,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "yuki": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0093,
+      "max_cer": 0.1304,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "hana": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.015,
+      "max_cer": 0.125,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "kenta": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0036,
+      "max_cer": 0.0435,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "takeshi": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.007,
+      "max_cer": 0.125,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    }
+  }
+}

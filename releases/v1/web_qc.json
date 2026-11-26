@@ -1,0 +1,119 @@
+{
+  "run": "web",
+  "manifest": "outputs\\logs\\web_manifest.csv",
+  "threshold": 0.15,
+  "asr_model": "large-v3",
+  "n": 240,
+  "n_ok": 237,
+  "n_fail": 3,
+  "n_short": 0,
+  "mean_cer": 0.0101,
+  "characters": {
+    "deep_narrator": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0037,
+      "max_cer": 0.0455,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "chill_male": {
+      "n": 24,
+      "n_ok": 23,
+      "n_short": 0,
+      "mean_cer": 0.0184,
+      "max_cer": 0.2727,
+      "concat_cer": null,
+      "failed_ids": [
+        "t11_u"
+      ],
+      "short_ids": []
+    },
+    "energetic_male": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0169,
+      "max_cer": 0.1176,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "young_male": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.005,
+      "max_cer": 0.0435,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "calm_female": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.007,
+      "max_cer": 0.125,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "bright_female": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0111,
+      "max_cer": 0.125,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "excited_female": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.006,
+      "max_cer": 0.1,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    },
+    "mysterious_voice": {
+      "n": 24,
+      "n_ok": 23,
+      "n_short": 0,
+      "mean_cer": 0.0173,
+      "max_cer": 0.1818,
+      "concat_cer": null,
+      "failed_ids": [
+        "t11_u"
+      ],
+      "short_ids": []
+    },
+    "whisper_male": {
+      "n": 24,
+      "n_ok": 23,
+      "n_short": 0,
+      "mean_cer": 0.0142,
+      "max_cer": 0.1818,
+      "concat_cer": null,
+      "failed_ids": [
+        "t11_u"
+      ],
+      "short_ids": []
+    },
+    "playful_falsetto": {
+      "n": 24,
+      "n_ok": 24,
+      "n_short": 0,
+      "mean_cer": 0.0018,
+      "max_cer": 0.0435,
+      "concat_cer": null,
+      "failed_ids": [],
+      "short_ids": []
+    }
+  }
+}

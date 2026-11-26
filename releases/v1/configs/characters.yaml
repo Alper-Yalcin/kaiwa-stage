@@ -1,0 +1,124 @@
+# Karakter preset'leri (Faz 1, MVP 4).
+# Kontrol MODEL SEVİYESİNDE yapılır; DSP pitch shift YOK.
+#
+# Alanlar:
+#   speaker_id    : JVS konuşmacısı (jvs001..jvs100) — modelde (spk2id) olmalı
+#   style_id      : Neutral | normal | whisper | falsetto   (jvs_multi12 style2id)
+#   style_weight  : stil vektörü ağırlığı (0.0 - 1.0+; whisper/falsetto için 1.0)
+#   length_scale  : konuşma hızı (>1 yavaş, <1 hızlı)
+#   sdp_ratio     : tonlama çeşitliliği (0.0 - 1.0)
+#   noise         : örnekleme gürültüsü / ifade (0.0 - 1.0)
+#   description   : serbest açıklama (koda etkisi yok)
+#
+# Konuşmacı seçimi JVS kayıtlarından ölçülen medyan F0 / konuşma hızına dayanır
+# (scripts/ altındaki ölçüm, sprint-plan-mvp.md MVP 4 notu):
+#   jvs006 M  96Hz (en pes)        jvs071 M 107Hz (en yavaş, 4.7 kr/sn)
+#   jvs028 M 116Hz                 jvs042 M 137Hz (en hızlı erkek, 6.4 kr/sn)
+#   jvs003 M 160Hz                 jvs001 M 164Hz (yüksek F0 varyansı = ifadeli)
+#   jvs064 F 227Hz (en sakin)      jvs017 F 233Hz     jvs025 F 236Hz
+#   jvs084 F 243Hz                 jvs002 F 244Hz (en hızlı kadın, 6.5 kr/sn)
+#   jvs036 F 282Hz (en tiz, en geniş F0 = en ifadeli)
+#
+# jvs_multi12 modeli konuşmacıları: jvs001 jvs002 jvs003 jvs006 jvs017 jvs025
+#                                  jvs028 jvs036 jvs042 jvs064 jvs071 jvs084
+
+# --- MVP 1: pretrained JVNV JP-Extra modeli (tek konuşmacı, yedek) ---
+default_jp:
+  speaker_id: "0"          # pretrained model tek konuşmacılı -> id 0
+  style_id: Neutral
+  style_weight: 1.0
+  length_scale: 1.0
+  sdp_ratio: 0.2
+  noise: 0.6
+  description: "Yedek: modelin 0 numaralı konuşmacısı, Neutral stil (pretrained ile JVNV-F1)"
+
+# --- MVP 4: jvs_multi12 karakterleri ---
+deep_narrator:
+  speaker_id: jvs006
+  style_id: normal
+  style_weight: 0.7
+  length_scale: 1.10
+  sdp_ratio: 0.15
+  noise: 0.5
+  description: "Pes, düz, anlatıcı erkek sesi; yavaş ve kararlı"
+
+chill_male:
+  speaker_id: jvs071
+  style_id: normal
+  style_weight: 0.6
+  length_scale: 1.15
+  sdp_ratio: 0.2
+  noise: 0.6
+  description: "Rahat, ağır konuşan erkek; düşük perde"
+
+energetic_male:
+  speaker_id: jvs042
+  style_id: normal
+  style_weight: 0.8
+  length_scale: 0.90
+  sdp_ratio: 0.4
+  noise: 0.7
+  description: "Hızlı, enerjik orta perdeli erkek"
+
+young_male:
+  speaker_id: jvs001
+  style_id: normal
+  style_weight: 0.8
+  length_scale: 0.95
+  sdp_ratio: 0.35
+  noise: 0.65
+  description: "Genç, ifadeli, yüksek perdeli erkek"
+
+calm_female:
+  speaker_id: jvs064
+  style_id: normal
+  style_weight: 0.6
+  length_scale: 1.10
+  sdp_ratio: 0.15
+  noise: 0.5
+  description: "Sakin, alçak perdeli kadın; anons/rehber tonu"
+
+bright_female:
+  speaker_id: jvs002
+  style_id: normal
+  style_weight: 0.8
+  length_scale: 0.95
+  sdp_ratio: 0.3
+  noise: 0.6
+  description: "Canlı, hızlı konuşan kadın"
+
+excited_female:
+  speaker_id: jvs036
+  style_id: normal
+  style_weight: 0.9
+  length_scale: 0.90
+  sdp_ratio: 0.45
+  noise: 0.7
+  description: "Tiz, heyecanlı, geniş tonlamalı kadın"
+
+mysterious_voice:
+  speaker_id: jvs064
+  style_id: whisper
+  style_weight: 1.0
+  length_scale: 1.20
+  sdp_ratio: 0.3
+  noise: 0.6
+  description: "Fısıltılı, yavaş, gizemli kadın sesi"
+
+whisper_male:
+  speaker_id: jvs003        # jvs028 fısıltısı anlaşılmazdı (39/47); jvs003 12/12 (tarama 2026-09-17)
+  style_id: whisper
+  style_weight: 1.0
+  length_scale: 1.15
+  sdp_ratio: 0.2
+  noise: 0.5
+  description: "Fısıltılı erkek; sır verir gibi"
+
+playful_falsetto:
+  speaker_id: jvs036
+  style_id: falsetto
+  style_weight: 0.7        # 0.9+ ünsüzleri eziyor (CER 0.24); 0.4 falsetto'yu kaybediyor
+  length_scale: 1.05       # falsetto'da hızlı tempo anlaşılırlığı düşürüyor
+  sdp_ratio: 0.2
+  noise: 0.5
+  description: "Falsetto/kafa sesi (~500 Hz), oyuncu ve tiz kadın karakteri"
